@@ -7,7 +7,7 @@ import subprocess
 
 
 # Input injection
-def transcode_file(request, filename):
+def transcode_file(request, filename, user):
     assert user.is_admin
     command = 'ffmpeg -i "{source}" output_file.mpg'.format(source=filename)
     subprocess.call(command, shell=True)  # a bad idea!
